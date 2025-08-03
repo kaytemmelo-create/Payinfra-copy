@@ -1,0 +1,497 @@
+:root {
+  --primary: #07a173;
+  --primary-dark: #23395d;
+  --accent: #00d4ff;
+  --bg: #f5f6fa;
+  --cta: #32d296;
+  --cta-dark: #129670;
+  --header-bg: #fff;
+  --text-main: #23395d;
+  --section-bg: #fff;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;     /* Always fill at least the full visible height */
+  min-width: 100vw;      /* Always fill the visible width */
+}
+/* Main content grows to fill available space */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f9f9f9;
+}
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  padding: 1.2em 3vw;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  text-decoration: none; /* remove underline */
+}
+
+.logo-image {
+  width: 200px; /* adjust size as needed */
+  height: auto;
+  display: block;
+}
+/*  Header Navigation styles */
+nav ul {
+display: flex;
+gap: 1 .0em;
+list-style: none;
+margin: 0;
+padding: 0;
+flex-wrap: wrap; /* allows items to wrap on smaller screens */
+justify-content: center;
+gap: 1.5rem;
+}
+
+nav a {
+color: var(--primary-dark);
+text-decoration: none;
+font-weight: 500;
+font-size: 1.06em;
+padding: 0.2em 0.5em;
+transition: color 0.2s;
+}
+
+nav a:hover, nav a.cta, .cta {
+color: #fff;
+background: var(--primary);
+border-radius: 22px;
+padding: 0.38em 1.2em;
+text-decoration: none;
+font-weight: 600;
+transition: background 0.2s, color 0.2s;
+}
+/* Call to action button styles */
+nav a.cta, .cta {
+nav a.cta {
+margin-left: 1em;
+}
+}
+/* Secondary button styles */
+nav a.sec-btn,
+.sec-btn {
+color: var(--primary);
+background: #eaf6ff;
+border-radius: 22px;
+padding: 0.38em 1.2em;
+border: 1px solid var(--primary);
+font-weight: 500;
+margin-left: 0.7em;
+text-decoration: none;
+transition: background 0.2s, color 0.2s;
+}
+/* Secondary button hover effect */
+nav a.sec-btn:hover, .sec-btn:hover {
+background: var(--primary-dark);
+color: #fff;
+border-color: var(--primary-dark);
+}
+/* Turn every transaction into a seamless experience with Payinfra */
+.hero {
+  background: linear-gradient(120deg, #eaf6ff 60%, #fff 100%);
+  padding: 4.3em 0 2.5em 0;
+  text-align: center;
+}
+/* Hero content/landing */
+.hero-content h1 {
+  font-size: 2.4em;
+  font-weight: 800;
+  margin-bottom: 0.15em;
+  color: var(--text-main);
+}
+/* Highlight brand name in hero */
+.brand-highlight {
+  color: var(--primary);
+}
+/* Hero subheading */
+.hero-content p {
+  font-size: 1.1em;
+  color: #456;
+  margin: 0.5em 0 2em 0;
+}
+/* Hero call to action buttons */
+.hero-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.4em;
+}
+/* Hero button styles */
+section {
+  max-width: 1120px;
+  margin: 2.5em auto;
+  padding: 1em 5vw;
+  background: var(--section-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+/* Section headings */
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.02em;
+}
+/* Section subheadings */
+.section-sub {
+  text-align: center;
+  color: #456;
+  margin-bottom: 2em;
+  font-size: 1.07em;
+  opacity: 0.83;
+}
+/* Section content */
+.features-grid, .why-grid, .usecases-grid {
+  display: grid;
+  gap: 2.3em;
+}
+/* Feature cards */
+.features-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 1em;
+}
+/* Feature card styles */
+.feature-card {
+  background: #ecf9f1;
+  border-radius: 12px;
+  padding: 1.4em 1.2em;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,119,255,0.04);
+  transition: box-shadow 0.2s;
+}
+/* Feature card hover effect */
+.feature-card i {
+  color: var(--primary);
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+/* Feature card title */
+.feature-card h3 {
+  margin: 0.6em 0 0.3em 0;
+  font-size: 1.17em;
+}
+/* Feature card description */
+.feature-card p {
+  color: #456;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+/* Use cases grid */
+.usecases-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 2.2em 0 1em 0;
+}
+/* Use case card styles */
+.usecase-card {
+  background: #ecf9f1;
+  border-radius: 12px;
+  padding: 1.2em 1em;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(255,193,7,0.07);
+  transition: box-shadow 0.2s;
+}
+/* Use case card hover effect */
+.usecase-card i {
+  color: var(--cta-dark);
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+/* Use case card title */
+.usecase-card h3 {
+  margin: 0.4em 0;
+}
+/* Use case card description */
+.usecase-card p {
+  color: #456;
+  font-size: 0.98em;
+  margin-bottom: 0;
+}
+.why-section{
+  text-align: center;
+}
+/* Why Payinfra grid */
+.why-grid {
+  display: flex;
+}
+/* Why card styles */
+
+/* Why card hover effect */
+.why-card i {
+  color: var(--cta-dark);
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+/* Why card title */
+.why-card h3 {
+  margin: 0.5em 0;
+}
+/* Why card description */
+.why-card p {
+  color: #345a44;
+  font-size: 0.99em;
+  margin-bottom: 0;
+}
+/* Industries grid */
+.industries-grid {
+  display: grid;
+  gap: 1.1em;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin: 2em 0;
+  justify-items: center;
+}
+/* Industry card styles */
+.industry {
+  background: #eaf6ff;
+  color: var(--primary);
+  padding: 0.7em 1.2em;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+/* Industry icon */
+.payments-value {
+  background: linear-gradient(120deg, #eaf6ff 70%, #ecf9f1 100%);
+  max-width: 1120px;
+  margin: 2.5em auto 0 auto;
+  border-radius: 16px;
+  padding: 2.8em 5vw;
+  box-shadow: 0 2px 8px rgba(0, 119, 255, 0.02);
+  text-align: center;
+}
+/* Payments value section heading */
+.payments-value h2 {
+  color: var(--primary-dark);
+}
+/* Payments value section subheading */
+.payments-value .highlighted-blurb {
+  margin: 1em auto 0 auto;
+  font-size: 1.07em;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+/* Payments value section description */
+.payments-value .brand {
+  color: var(--primary);
+  font-weight: bold;
+}
+/* Payments value section icon */
+.cta-section {
+  background: linear-gradient(105deg, var(--primary) 70%, #fff 120%);
+  color: #fff;
+  text-align: center;
+  max-width: 1120px;
+  margin: 2.5em auto 0 auto;
+  border-radius: 16px;
+  padding: 2.8em 5vw;
+  border-radius: 10px;
+  margin-top: 3em;
+  margin-bottom: 0;
+  padding: 2.7em 5vw 2em 5vw;
+  height: auto;
+}
+/* Call to action section heading */
+.cta-section h2 {
+  color: #fff;
+}
+/* Call to action section subheading */
+.cta-section p {
+  color: #e0ebff;
+  font-size: 1.1em;
+  margin-bottom: 2.3em;
+}
+/* Call to action buttons */
+.cta-section .hero-cta-buttons {
+  gap: 1em;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+/* Footer */
+.footer {
+  background: #101828;
+  color: #fff;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100%;
+  margin-top: 2.5em;
+  letter-spacing: 0.01em;
+}
+/* Footer main section */
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.3em 4vw 1.7em 4vw;
+  border-bottom: 1px solid #2d3748;
+}
+/* Footer brand section */
+.footer-brand {
+  flex: 1 1 250px;
+  min-width: 220px;
+  margin-bottom: 2em;
+}
+/* Footer brand logo */
+.footer-logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Here's header menus toggles hide when min & show when max and media queries, responsive design, structures */
+/* Add media queries for responsiveness */
+@media (max-width: 900px) {
+  .features-grid, .why-grid, .usecases-grid, .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 1.3em;
+  }
+  /* Adjust hero section padding */
+  .hero {
+    padding: 2.1em 0 1.2em 0;
+  }
+}
+/* Adjust section padding for smaller screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7em;
+    padding: 1.2em 1.5vw;
+  }
+  /* Adjust logo size */
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 0.7em;
+  }
+  /* Adjust section padding */
+  section, .payments-value {
+    padding: 0.7em 2vw;
+    border-radius: 10px;
+  }
+  /* Adjust hero content */
+  .cta-section {
+    padding: 1.6em 2vw 1em 2vw;
+  }
+}
+/* Back to top button */
+#back-to-top {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0077ff 60%, #01d0ff 100%);
+  color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  z-index: 2000;
+  opacity: 1.0;
+  pointer-events: visibleStroke;
+  transition: opacity 0.3s, box-shadow 0.2s, transform 0.2s;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Hide back to top button by default */
+#back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#back-to-top:hover {
+  box-shadow: 0 8px 24px rgba(1,208,255,0.22);
+  transform: translateY(-2px) scale(1.06);
+  background: linear-gradient(135deg, #014f86 90%, #0077ff 100%);
+}
+/* Smooth scroll for back to top */
+html {
+  scroll-behavior: smooth;
+}
+/* Basic styles for nav */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+/* Hide hamburger menu icon by default */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* Responsive: On screens <= 768px */
+@media (max-width: 768px) {
+  /* Hide nav menu by default */
+  .nav-menu {
+    display: none;
+    width: 100%;
+  }
+  /* When nav-menu has 'active' class, show it */
+  .nav-menu.active {
+    display: block;
+    background-color: #fff; /* or your nav background */
+    position: absolute;
+    top: 60px; /* height of header */
+    left: 0;
+    padding: 1em 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  /* Flex direction for nav items */
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    padding: 0 1em;
+  }
+  /* Show hamburger icon on small screen */
+  .menu-toggle {
+    display: block;
+  }
+}
