@@ -309,7 +309,7 @@ h2 {
 }
 /* Payments value section icon */
 .cta-section {
-  background: linear-gradient(105deg, var(--primary) 70%, #fff 120%);
+  background: linear-gradient(70deg, var(--cta-dark) 70%, #fff 150%);
   color: #fff;
   text-align: center;
   max-width: 1120px;
@@ -324,7 +324,7 @@ h2 {
 }
 /* Call to action section heading */
 .cta-section h2 {
-  color: #fff;
+  color: #f1e9e9;
 }
 /* Call to action section subheading */
 .cta-section p {
@@ -374,43 +374,6 @@ h2 {
     padding: 1.6em 2vw 1em 2vw;
   }
 }
-/* Back to top button */
-#back-to-top {
-  position: fixed;
-  bottom: 35px;
-  right: 35px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0077ff 60%, #01d0ff 100%);
-  color: #fff;
-  border: none;
-  outline: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  cursor: pointer;
-  z-index: 2000;
-  opacity: 1.0;
-  pointer-events: visibleStroke;
-  transition: opacity 0.3s, box-shadow 0.2s, transform 0.2s;
-  font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Hide back to top button by default */
-#back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#back-to-top:hover {
-  box-shadow: 0 8px 24px rgba(1,208,255,0.22);
-  transform: translateY(-2px) scale(1.06);
-  background: linear-gradient(135deg, #014f86 90%, #0077ff 100%);
-}
-/* Smooth scroll for back to top */
-html {
-  scroll-behavior: smooth;
-}
 /* Basic styles for nav */
 .nav-menu ul {
   list-style: none;
@@ -431,7 +394,8 @@ html {
 @media (max-width: 768px) {
   /* Hide nav menu by default */
   .nav-menu {
-    display: none;
+    display: contents;;
+    z-index: 1000;
     width: 100%;
   }
   /* When nav-menu has 'active' class, show it */
@@ -478,7 +442,6 @@ html {
 }
 
 .footer-brand {
-  flex: 1 1 250px;
   min-width: 220px;
   margin-bottom: 2em;
 }
@@ -499,15 +462,6 @@ html {
   font-size: 1em;
   color: #b6bfd3;
   margin-bottom: 1.6em;
-}
-.footer-social a {
-  color: #b6bfd3;
-  margin-right: 1em;
-  font-size: 1.25em;
-  transition: color 0.22s;
-}
-.footer-social a:hover {
-  color: #01d0ff;
 }
 
 .footer-nav {
@@ -553,21 +507,32 @@ html {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 1.1em 4vw;
   font-size: 0.97em;
   color: #b6bfd3;
 }
-.footer-links a {
-  color: #b6bfd3;
-  margin-left: 1em;
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #243947;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
   text-decoration: none;
-  font-size: 0.97em;
-  transition: color 0.18s;
+  font-size: 1.2em;
+  margin: auto 0.2em;
 }
-.footer-links a:hover {
-  color: #01d0ff;
-  text-decoration: underline;
+.social-icon:hover {
+  background: var(--cta);
+  color: #243947;
+  transform: translateY(-3px) scale(1.12);
 }
 
 /* Responsive Design */
@@ -637,3 +602,11 @@ html {
   font-size: 0.97em;
 }
 .form-notes a { color: #2a4891; }
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+html, body { margin: 0; padding: 0; min-height: 100vh; box-sizing: border-box; }
+.container { width: 95%; max-width: 1200px; margin: 0 auto; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
