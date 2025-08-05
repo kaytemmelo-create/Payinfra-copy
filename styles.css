@@ -59,6 +59,7 @@ header {
   font-size: 2rem;
   cursor: pointer;
   margin-left: auto; 
+  justify-items: flex-end; /* Aligns the menu toggle to the right */
 }
 
 nav {
@@ -67,10 +68,14 @@ nav {
 
 .nav-list {
   display: flex;
-  gap: 2em;
+  gap: 0.5em;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap; /* prevents wrapping on larger screens */
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -78,8 +83,8 @@ nav {
     display: none;
     position: fixed; /* changed from absolute to fixed */
     right: 0;
-    top: 64px; /* Adjust this if your header is taller */
-    background: #fff;
+    top: 10px; /* Adjust this if your header is taller */
+    background:
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     flex-direction: column;
     min-width: 180px;
