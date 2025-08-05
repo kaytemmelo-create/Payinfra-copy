@@ -45,14 +45,56 @@ header {
   top: 0;
   z-index: 10;
 }
-
+/* Header logo and title edit for small screens with humber menu */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5em;
-  cursor: pointer;
-  text-decoration: none; /* remove underline */
+  gap: 0.7em;
 }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: auto; 
+}
+
+nav {
+  position: relative;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    position: fixed; /* changed from absolute to fixed */
+    right: 0;
+    top: 64px; /* Adjust this if your header is taller */
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    flex-direction: column;
+    min-width: 180px;
+    z-index: 1000; /* higher z-index so it stays above content */
+    border-radius: 0 0 12px 12px;
+  }
+  .nav-list.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
 
 .logo-image {
   height: auto;
