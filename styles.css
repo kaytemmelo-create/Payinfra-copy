@@ -229,6 +229,16 @@ section {
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
+/* Falshing text*/
+@keyframes colorFlash {
+  5%, 70% { color: var(--primary-dark); }
+  50% { color: var(--cta-dark); }
+}
+
+h2.flashing {
+  animation: colorFlash 1s infinite;
+}
+
 /* Section headings */
 h2 {
   font-size: 2em;
