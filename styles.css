@@ -172,19 +172,7 @@ border-color: var(--primary-dark);
   display: contents;
 }
 /* Hero section flexbox layout */
-.hero-image {
-  flex-shrink: 0;
-  margin-top: 0;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  min-width: 220px;
-  min-height: 220px;
-  transition: transform 0.3s ease;
-  margin: 0 auto;
-}
+
 
 .hero-content {
   flex-direction: column;
@@ -207,7 +195,16 @@ border-color: var(--primary-dark);
     min-width: 160px;
   }
 }
-
+/* Hero herohq image */
+.hero-image img {
+  width: 100%;
+  height: auto;
+  width: 100%;
+  max-height: 1280px;
+  min-width: 320px;
+  border-radius: 5px;
+  object-fit: contain; 
+}
 /* Highlight brand name in hero */
 .brand-highlight {
   color: var(--primary);
@@ -257,6 +254,8 @@ h2 {
   opacity: 0.83;
 }
 /* Section content */
+
+
 .features-grid, .why-grid, .usecases-grid {
   display: grid;
   gap: 2.3em;
@@ -483,6 +482,7 @@ h2 {
     z-index: 1000;
     width: 100%;
   }
+  
   /* When nav-menu has 'active' class, show it */
   .nav-menu.active {
     display: block;
@@ -505,6 +505,61 @@ h2 {
     display: block;
   }
 }
+/* contact info section */
+  .contact-info {
+  background: #fff;
+  padding: 2.1em 1.5em;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 119, 255, 0.07);
+  min-width: 320px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 2em auto 0 auto;
+  text-align: center;
+}
+
+.contact-info h2 {
+  color: #014f86;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85em;
+  font-size: 1.08em;
+  color: #23395d;
+}
+.contact-item i {
+  color: var(--cta);
+  font-size: 1.5em;
+}
+
+.contact-item a {
+  color: #014f86;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.contact-item a:visited {
+  color: #014f86;
+}
+.contact-item a:hover,
+.contact-item a:focus {
+  color: var(--cta-dark);
+}
+
+/* Footer styles */
 .footer {
   background: #101828;
   color: #fff;
