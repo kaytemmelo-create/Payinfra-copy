@@ -10,7 +10,13 @@
   --section-bg: #fff;
 }
 *, *:before, *:after {
-  box-sizing: border-box;
+  box-sizing: content-box;
+}
+
+body, html {
+  width: 100%;
+  min-width: 320px;   /* Ensures usable layout on smallest screens */
+  max-width: none;    /* No cap unless you add a container */
 }
 
 body {
@@ -21,11 +27,8 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  width: fit-content;
   margin: 0;
   padding: 0;
-  min-height: 100vh;     /* Always fill at least the full visible height */
-  min-width: 100vw;      /* Always fill the visible width */
 }
 /* Main content grows to fill available space */
 main {
@@ -78,13 +81,13 @@ nav {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .nav-list {
     display: none;
     position: fixed; /* changed from absolute to fixed */
     right: 0;
     top: 10px; /* Adjust this if your header is taller */
-    background:
+    background: #fff;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     flex-direction: column;
     min-width: 180px;
@@ -166,23 +169,48 @@ border-color: var(--primary-dark);
   background: linear-gradient(120deg, #eaf6ff 60%, #fff 100%);
   padding: 4.3em 0 2.5em 0;
   text-align: center;
+  display: contents;
 }
-/* Hero content/landing */
-.hero-content h1 {
-  font-size: 2.4em;
-  font-weight: 800;
-  margin-bottom: 0.15em;
-  color: var(--text-main);
+/* Hero section flexbox layout */
+.hero-image {
+  flex-shrink: 0;
+  margin-top: 0;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  min-height: 220px;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
 }
+
+.hero-content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+/* Responsive support */
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .hero-svg {
+    margin-top: 24px;
+    min-width: 160px;
+  }
+}
+
 /* Highlight brand name in hero */
 .brand-highlight {
   color: var(--primary);
-}
-/* Hero subheading */
-.hero-content p {
-  font-size: 1.1em;
-  color: #456;
-  margin: 0.5em 0 2em 0;
 }
 /* Hero call to action buttons */
 .hero-cta-buttons {

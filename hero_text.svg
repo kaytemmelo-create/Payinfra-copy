@@ -1,0 +1,203 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#38ef7d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1">
+        <animate attributeName="stop-color" values="#10b981;#059669;#047857;#10b981" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1">
+        <animate attributeName="stop-color" values="#34d399;#6ee7b7;#a7f3d0;#34d399" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="subtitleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Clip path for reveal animation -->
+    <clipPath id="textReveal">
+      <rect x="0" y="0" width="1200" height="400">
+        <animate attributeName="width" values="0;1200" dur="2s" begin="0.5s" fill="freeze"/>
+      </rect>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#f8fafc"/>
+  
+  <!-- Decorative background elements -->
+  <g opacity="0.05">
+    <circle cx="100" cy="100" r="150" fill="url(#heroGradient)">
+      <animate attributeName="r" values="150;180;150" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="300" r="120" fill="url(#brandGradient)">
+      <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Main headline -->
+  <g clip-path="url(#textReveal)">
+    <!-- "Turn Every Transaction Into a" -->
+    <text x="600" y="80" text-anchor="middle" fill="#1f2937" font-size="48" font-weight="700" opacity="0">
+      Turn Every Transaction Into a
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="1s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0,20; 0,0" dur="1s" begin="1s" fill="freeze"/>
+    </text>
+    
+    <!-- "Brand Experience" - Hero text with gradient -->
+    <text x="600" y="140" text-anchor="middle" fill="url(#brandGradient)" font-size="56" font-weight="800" filter="url(#textGlow)" opacity="0">
+      Brand Experience
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="1.5s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="scale" values="0.8;1.05;1" dur="1s" begin="1.5s" fill="freeze"/>
+    </text>
+    
+    <!-- Animated underline for "Brand Experience" -->
+    <line x1="400" y1="155" x2="800" y2="155" stroke="url(#brandGradient)" stroke-width="4" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.5s" fill="freeze"/>
+      <animate attributeName="stroke-dasharray" values="0 400;400 0" dur="1s" begin="2.5s" fill="freeze"/>
+    </line>
+  </g>
+  
+  <!-- Subtitle text -->
+  <g>
+    <!-- "Launch Your Own Branded Wallet & Payment Ecosystem with" -->
+    <text x="600" y="200" text-anchor="middle" fill="url(#subtitleGradient)" font-size="24" font-weight="500" opacity="0">
+      Launch Your Own Branded Wallet &amp; Payment Ecosystem with
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="3s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0,15; 0,0" dur="1s" begin="3s" fill="freeze"/>
+    </text>
+    
+    <!-- "PayInfra" - Brand name with special styling -->
+    <text x="600" y="240" text-anchor="middle" fill="url(#heroGradient)" font-size="32" font-weight="700" filter="url(#textGlow)" opacity="0">
+      PayInfra
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="3.5s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="scale" values="0.9;1.1;1" dur="0.8s" begin="3.5s" fill="freeze"/>
+    </text>
+    
+    <!-- Description text -->
+    <text x="600" y="280" text-anchor="middle" fill="#6b7280" font-size="20" font-weight="400" opacity="0">
+      a branded virtual wallet platform that powers
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="4s" fill="freeze"/>
+    </text>
+    
+    <!-- Key features with staggered animation -->
+    <g>
+      <text x="450" y="320" text-anchor="middle" fill="url(#brandGradient)" font-size="20" font-weight="600" opacity="0">
+        seamless payments
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="4.5s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="translate" values="0,10; 0,0" dur="0.8s" begin="4.5s" fill="freeze"/>
+      </text>
+      
+      <text x="600" y="320" text-anchor="middle" fill="#6b7280" font-size="18" font-weight="400" opacity="0">
+        •
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5s" fill="freeze"/>
+      </text>
+      
+      <text x="650" y="320" text-anchor="middle" fill="url(#heroGradient)" font-size="20" font-weight="600" opacity="0">
+        loyalty
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="5.3s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="translate" values="0,10; 0,0" dur="0.8s" begin="5.3s" fill="freeze"/>
+      </text>
+      
+      <text x="720" y="320" text-anchor="middle" fill="#6b7280" font-size="18" font-weight="400" opacity="0">
+        •
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5.8s" fill="freeze"/>
+      </text>
+      
+      <text x="820" y="320" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="600" opacity="0">
+        data-driven growth
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="6.1s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="translate" values="0,10; 0,0" dur="0.8s" begin="6.1s" fill="freeze"/>
+      </text>
+    </g>
+  </g>
+  
+  <!-- Floating accent elements -->
+  <g opacity="0.6">
+    <!-- Payment icons -->
+    <g transform="translate(150, 150)" opacity="0">
+      <circle r="25" fill="url(#brandGradient)" opacity="0.2"/>
+      <rect x="-12" y="-8" width="24" height="16" rx="3" fill="url(#brandGradient)"/>
+      <rect x="-8" y="-4" width="16" height="2" fill="white" opacity="0.8"/>
+      <rect x="-8" y="0" width="10" height="1" fill="white" opacity="0.6"/>
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="2s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="150,170; 150,150" dur="1s" begin="2s" fill="freeze"/>
+    </g>
+    
+    <!-- Mobile wallet icon -->
+    <g transform="translate(1050, 200)" opacity="0">
+      <circle r="30" fill="#3b82f6" opacity="0.2"/>
+      <rect x="-10" y="-15" width="20" height="30" rx="3" fill="#3b82f6"/>
+      <rect x="-6" y="-10" width="12" height="20" rx="2" fill="white"/>
+      <circle cx="0" cy="8" r="2" fill="#3b82f6"/>
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="2.5s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="1050,220; 1050,200" dur="1s" begin="2.5s" fill="freeze"/>
+    </g>
+    
+    <!-- Data/Analytics icon -->
+    <g transform="translate(100, 280)" opacity="0">
+      <circle r="20" fill="#8b5cf6" opacity="0.2"/>
+      <rect x="-8" y="5" width="4" height="8" fill="#8b5cf6"/>
+      <rect x="-2" y="0" width="4" height="13" fill="#8b5cf6"/>
+      <rect x="4" y="-5" width="4" height="18" fill="#8b5cf6"/>
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="3s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="100,300; 100,280" dur="1s" begin="3s" fill="freeze"/>
+    </g>
+    
+    <!-- Loyalty/rewards icon -->
+    <g transform="translate(1100, 120)" opacity="0">
+      <circle r="22" fill="#f59e0b" opacity="0.2"/>
+      <path d="M 0,-8 L 6,0 L 0,8 L -6,0 Z" fill="#f59e0b"/>
+      <circle r="3" fill="white"/>
+      <animate attributeName="opacity" values="0;1" dur="1s" begin="3.5s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="1100,140; 1100,120" dur="1s" begin="3.5s" fill="freeze"/>
+    </g>
+  </g>
+  
+  <!-- Subtle particle effects -->
+  <g opacity="0.3">
+    <circle cx="200" cy="50" r="2" fill="url(#brandGradient)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; 0,0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="80" r="1.5" fill="#3b82f6">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -8,12; 0,0" dur="3.5s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="350" r="1" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,-5; 0,0" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Call-to-action hint animation -->
+  <g transform="translate(600, 370)" opacity="0">
+    <rect x="-60" y="-15" width="120" height="30" rx="15" fill="url(#brandGradient)" opacity="0.1"/>
+    <text text-anchor="middle" y="5" fill="url(#brandGradient)" font-size="14" font-weight="600">
+      Request a Demo
+    </text>
+    <animate attributeName="opacity" values="0;0.8;1;0.8" dur="2s" begin="7s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" values="0.9;1.05;1;0.95" dur="2s" begin="7s" repeatCount="indefinite"/>
+  </g>
+</svg>

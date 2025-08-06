@@ -1,0 +1,458 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="fuelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="fleetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4834d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#686de0;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="retailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2d3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#54a0ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="corpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5f27cd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a55eea;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="utilityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2d3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#01a3a4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="fintechGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9ff3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.15"/>
+    </filter>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#1f2937" font-size="32" font-weight="bold">
+    PayInfra Use Cases
+  </text>
+  <text x="600" y="90" text-anchor="middle" fill="#6b7280" font-size="16">
+    One Platform, Multiple Industries
+  </text>
+  
+  <!-- Use Case 1: Fuel Stations & C-Stores -->
+  <g id="fuelStation" transform="translate(100, 150)" opacity="1">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#fuelGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Fuel Stations &amp; C-Stores
+    </text>
+    
+    <!-- Gas Pump Icon -->
+    <g transform="translate(50, 80)">
+      <rect x="0" y="20" width="40" height="60" rx="8" fill="url(#fuelGrad)" opacity="0.8"/>
+      <rect x="10" y="30" width="20" height="8" rx="4" fill="white"/>
+      <rect x="10" y="45" width="15" height="4" rx="2" fill="white" opacity="0.7"/>
+      <rect x="10" y="55" width="12" height="4" rx="2" fill="white" opacity="0.7"/>
+      
+      <!-- Fuel Nozzle -->
+      <rect x="40" y="35" width="30" height="6" rx="3" fill="#2d3748"/>
+      <circle cx="75" cy="38" r="8" fill="#2d3748"/>
+      
+      <!-- Animated fuel flow -->
+      <g opacity="0">
+        <circle cx="45" cy="38" r="2" fill="url(#fuelGrad)">
+          <animate attributeName="cx" values="45;65;65" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="0s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Mobile Payment -->
+    <g transform="translate(150, 80)">
+      <rect width="60" height="100" rx="8" fill="#1f2937"/>
+      <rect x="8" y="15" width="44" height="70" rx="4" fill="#10b981"/>
+      <text x="30" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PAY</text>
+      <text x="30" y="60" text-anchor="middle" fill="white" font-size="10">$45.67</text>
+      
+      <!-- Payment pulse -->
+      <circle cx="30" cy="50" r="20" fill="none" stroke="#10b981" stroke-width="2" opacity="0">
+        <animate attributeName="r" values="20;35;20" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.6;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="0s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ Pay at pump or in-store</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Earn rewards &amp; track receipts</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="1;1;0;0;0;0;0;0;0;0;0;1" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Use Case 2: Fleet & Logistics -->
+  <g id="fleetLogistics" transform="translate(450, 150)" opacity="0">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#fleetGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Fleet &amp; Logistics
+    </text>
+    
+    <!-- Truck Icon -->
+    <g transform="translate(50, 80)">
+      <rect x="0" y="30" width="80" height="30" rx="4" fill="url(#fleetGrad)"/>
+      <rect x="5" y="35" width="50" height="20" rx="2" fill="white" opacity="0.9"/>
+      <circle cx="15" cy="70" r="8" fill="#2d3748"/>
+      <circle cx="65" cy="70" r="8" fill="#2d3748"/>
+      
+      <!-- Animated movement -->
+      <g opacity="0">
+        <rect x="90" y="40" width="4" height="2" fill="url(#fleetGrad)">
+          <animate attributeName="x" values="90;110;90" dur="1.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="95" y="45" width="3" height="1" fill="url(#fleetGrad)">
+          <animate attributeName="x" values="95;115;95" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+        </rect>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="4s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Fuel Card -->
+    <g transform="translate(150, 90)">
+      <rect width="80" height="50" rx="8" fill="url(#fleetGrad)"/>
+      <text x="40" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">FLEET</text>
+      <text x="40" y="32" text-anchor="middle" fill="white" font-size="8">FUEL CARD</text>
+      <text x="40" y="44" text-anchor="middle" fill="white" font-size="8">**** 1847</text>
+      
+      <!-- Card glow -->
+      <rect width="80" height="50" rx="8" fill="none" stroke="#686de0" stroke-width="2" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ Issue fuel wallets to drivers</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Track corporate spend by location</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="0;0;1;1;0;0;0;0;0;0;0;0" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Use Case 3: Retail & QSR Chains -->
+  <g id="retailQSR" transform="translate(800, 150)" opacity="0">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#retailGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Retail &amp; QSR Chains
+    </text>
+    
+    <!-- Store Icon -->
+    <g transform="translate(50, 80)">
+      <rect x="0" y="30" width="60" height="40" rx="4" fill="url(#retailGrad)" opacity="0.8"/>
+      <rect x="5" y="35" width="50" height="25" rx="2" fill="white"/>
+      <rect x="20" y="45" width="8" height="12" fill="url(#retailGrad)"/>
+      <rect x="32" y="45" width="8" height="12" fill="url(#retailGrad)"/>
+      
+      <!-- Awning -->
+      <path d="M -5 30 L 65 30 L 60 20 L 0 20 Z" fill="#e53e3e"/>
+    </g>
+    
+    <!-- QR Code & Mobile -->
+    <g transform="translate(150, 85)">
+      <!-- QR Code -->
+      <rect width="40" height="40" rx="4" fill="white" stroke="#374151" stroke-width="1"/>
+      <g fill="#1f2937">
+        <rect x="5" y="5" width="6" height="6"/>
+        <rect x="15" y="5" width="4" height="4"/>
+        <rect x="25" y="5" width="6" height="6"/>
+        <rect x="5" y="15" width="4" height="4"/>
+        <rect x="15" y="15" width="6" height="6"/>
+        <rect x="25" y="15" width="4" height="4"/>
+        <rect x="5" y="25" width="6" height="6"/>
+        <rect x="15" y="25" width="4" height="4"/>
+        <rect x="25" y="25" width="6" height="6"/>
+      </g>
+      
+      <!-- Mobile scanning -->
+      <rect x="50" y="10" width="35" height="60" rx="6" fill="#1f2937"/>
+      <rect x="55" y="20" width="25" height="40" rx="2" fill="#10b981" opacity="0">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="8s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Scan lines -->
+      <g opacity="0">
+        <rect x="52" y="30" width="31" height="1" fill="#10b981">
+          <animate attributeName="y" values="25;55;25" dur="1.5s" repeatCount="indefinite"/>
+        </rect>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="8s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ In-app checkout &amp; loyalty rewards</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Boost repeat purchases</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="0;0;0;0;1;1;0;0;0;0;0;0" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Use Case 4: Utility & Bill Payments -->
+  <g id="utilityBills" transform="translate(100, 400)" opacity="0">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#utilityGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Utility &amp; Bill Payments
+    </text>
+    
+    <!-- Utility Meter -->
+    <g transform="translate(50, 80)">
+      <rect x="10" y="20" width="50" height="60" rx="8" fill="url(#utilityGrad)" opacity="0.9"/>
+      <circle cx="35" cy="40" r="12" fill="white"/>
+      <circle cx="35" cy="40" r="8" fill="none" stroke="url(#utilityGrad)" stroke-width="2"/>
+      
+      <!-- Meter needle -->
+      <g transform="translate(35, 40)">
+        <line x1="0" y1="0" x2="0" y2="-6" stroke="#2d3748" stroke-width="2">
+          <animateTransform attributeName="transform" type="rotate" values="0;45;90;45;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </g>
+      
+      <!-- Digital display -->
+      <rect x="15" y="55" width="40" height="15" rx="2" fill="#1f2937"/>
+      <text x="35" y="66" text-anchor="middle" fill="#10b981" font-size="10" font-weight="bold">
+        <animate values="1247;1248;1249;1250" dur="4s" repeatCount="indefinite"/>
+        1247 kWh
+      </text>
+    </g>
+    
+    <!-- Auto Payment -->
+    <g transform="translate(150, 90)">
+      <rect width="80" height="50" rx="8" fill="white" stroke="url(#utilityGrad)" stroke-width="2"/>
+      <text x="40" y="20" text-anchor="middle" fill="url(#utilityGrad)" font-size="12" font-weight="bold">AUTO PAY</text>
+      <text x="40" y="35" text-anchor="middle" fill="#374151" font-size="10">Monthly: $127.43</text>
+      
+      <!-- Auto payment indicator -->
+      <circle cx="40" cy="25" r="20" fill="none" stroke="#10b981" stroke-width="2" opacity="0">
+        <animate attributeName="opacity" values="0;0.6;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="12s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ Recurring &amp; one-click payments</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Automated reconciliation</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="0;0;0;0;0;0;1;1;0;0;0;0" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Use Case 5: Employee Benefits & Stipends -->
+  <g id="employeeBenefits" transform="translate(450, 400)" opacity="0">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#corpGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Employee Benefits
+    </text>
+    
+    <!-- Employee Cards -->
+    <g transform="translate(50, 80)">
+      <rect width="70" height="45" rx="6" fill="url(#corpGrad)" opacity="0.9"/>
+      <text x="35" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">STIPEND</text>
+      <text x="35" y="32" text-anchor="middle" fill="white" font-size="8">John Doe</text>
+      <text x="35" y="42" text-anchor="middle" fill="white" font-size="8">ID: 1847</text>
+      
+      <!-- Card 2 -->
+      <rect x="20" y="10" width="70" height="45" rx="6" fill="url(#corpGrad)"/>
+      <text x="55" y="30" text-anchor="middle" fill="white" font-size="10" font-weight="bold">MEAL</text>
+      <text x="55" y="42" text-anchor="middle" fill="white" font-size="8">Jane Smith</text>
+      <text x="55" y="52" text-anchor="middle" fill="white" font-size="8">ID: 2156</text>
+      
+      <!-- Animated money transfer -->
+      <g opacity="0">
+        <text x="100" y="35" fill="url(#corpGrad)" font-size="16" font-weight="bold">$</text>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="16s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Management Dashboard -->
+    <g transform="translate(150, 85)">
+      <rect width="80" height="60" rx="8" fill="white" stroke="url(#corpGrad)" stroke-width="2"/>
+      <text x="40" y="15" text-anchor="middle" fill="url(#corpGrad)" font-size="10" font-weight="bold">ADMIN</text>
+      <rect x="10" y="20" width="60" height="2" fill="url(#corpGrad)" opacity="0.3"/>
+      <rect x="10" y="28" width="45" height="2" fill="url(#corpGrad)" opacity="0.3"/>
+      <rect x="10" y="36" width="50" height="2" fill="url(#corpGrad)" opacity="0.3"/>
+      <rect x="10" y="44" width="35" height="2" fill="url(#corpGrad)" opacity="0.3"/>
+      
+      <!-- Activity indicator -->
+      <circle cx="70" cy="15" r="3" fill="#10b981">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="16s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ Disburse stipends &amp; manage allowances</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Track employee spending</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1;0;0" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Use Case 6: Fintechs & Neobanks -->
+  <g id="fintechNeobanks" transform="translate(800, 400)" opacity="0">
+    <rect width="300" height="200" rx="16" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="300" height="60" rx="16" fill="url(#fintechGrad)"/>
+    <text x="150" y="35" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
+      Fintechs &amp; Neobanks
+    </text>
+    
+    <!-- Mobile Banking App -->
+    <g transform="translate(50, 80)">
+      <rect width="70" height="110" rx="12" fill="#1f2937"/>
+      <rect x="8" y="20" width="54" height="80" rx="6" fill="url(#fintechGrad)"/>
+      
+      <!-- App interface -->
+      <circle cx="35" cy="35" r="8" fill="white" opacity="0.9"/>
+      <text x="35" y="40" text-anchor="middle" fill="url(#fintechGrad)" font-size="10" font-weight="bold">$</text>
+      
+      <rect x="15" y="50" width="40" height="3" rx="1" fill="white" opacity="0.7"/>
+      <rect x="15" y="58" width="30" height="2" rx="1" fill="white" opacity="0.5"/>
+      <rect x="15" y="65" width="35" height="2" rx="1" fill="white" opacity="0.5"/>
+      
+      <!-- Balance animation -->
+      <text x="35" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">
+        <animate values="$2,847;$2,872;$2,896;$2,921" dur="4s" repeatCount="indefinite"/>
+        $2,847
+      </text>
+      
+      <!-- Notification -->
+      <circle cx="60" cy="25" r="6" fill="#dc2626" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="20s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- API Integration -->
+    <g transform="translate(150, 90)">
+      <rect width="80" height="50" rx="8" fill="white" stroke="#ff9ff3" stroke-width="2"/>
+      <text x="40" y="20" text-anchor="middle" fill="#ff9ff3" font-size="12" font-weight="bold">API</text>
+      <text x="40" y="35" text-anchor="middle" fill="#374151" font-size="10">Ready in weeks</text>
+      
+      <!-- Data flow -->
+      <g opacity="0">
+        <circle cx="10" cy="25" r="2" fill="#ff9ff3">
+          <animate attributeName="cx" values="10;70;10" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="20s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Benefits -->
+    <text x="20" y="170" fill="#374151" font-size="12">✓ Launch branded wallets in weeks</text>
+    <text x="20" y="185" fill="#374151" font-size="12">✓ Integrated payments &amp; analytics</text>
+    
+    <!-- Fade animation -->
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;1" dur="24s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Central PayInfra Hub -->
+  <g transform="translate(600, 400)">
+    <circle r="60" fill="url(#cardGradient)" opacity="0.1" filter="url(#glow)"/>
+    <circle r="45" fill="url(#cardGradient)" opacity="0.8">
+      <animate attributeName="r" values="45;50;45" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text y="8" text-anchor="middle" fill="white" font-size="20" font-weight="bold">P</text>
+    <text x="0" y="-70" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="600">PayInfra Platform</text>
+    
+    <!-- Connection lines to all use cases -->
+    <g stroke="#cbd5e1" stroke-width="2" fill="none" opacity="0.4" stroke-dasharray="5,5">
+      <line x1="-45" y1="-35" x2="-350" y2="-180">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-20" y1="-45" x2="-150" y2="-180">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="20" y1="-45" x2="200" y2="-180">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-45" y1="35" x2="-350" y2="70">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-20" y1="45" x2="-150" y2="70">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="20" y1="45" x2="200" y2="70">
+        <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+  
+  <!-- Progress Indicator -->
+  <g transform="translate(600, 720)">
+    <g id="progressDots">
+      <circle cx="-75" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#10b981;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-45" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#10b981;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-15" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="15" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="45" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#cbd5e1;#cbd5e1;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="75" cy="0" r="6" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#cbd5e1" dur="24s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Use case labels -->
+    <text y="25" text-anchor="middle" fill="#6b7280" font-size="12">
+      <animate values="Fuel Stations;Fleet &amp; Logistics;Retail &amp; QSR;Utility Bills;Employee Benefits;Fintechs" dur="24s" repeatCount="indefinite"/>
+      Fuel Stations
+    </text>
+  </g>
+  
+  <!-- Floating benefits -->
+  <g id="floatingBenefits" transform="translate(100, 650)" opacity="0.8">
+    <text x="0" y="0" fill="#10b981" font-size="14" font-weight="600">
+      ✓ Full Brand Ownership
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </text>
+    <text x="200" y="0" fill="#3b82f6" font-size="14" font-weight="600">
+      ✓ Faster Time-to-Market
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </text>
+    <text x="400" y="0" fill="#8b5cf6" font-size="14" font-weight="600">
+      ✓ Lower Transaction Costs
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="650" y="0" fill="#ef4444" font-size="14" font-weight="600">
+      ✓ Rich First-Party Data
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+</svg>
