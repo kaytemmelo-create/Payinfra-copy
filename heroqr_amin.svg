@@ -1,0 +1,297 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="qrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="15" flood-opacity="0.2"/>
+    </filter>
+    
+    <!-- Scanning line pattern -->
+    <pattern id="scanPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="2" fill="#10b981" opacity="0.6"/>
+      <rect y="2" width="4" height="2" fill="transparent"/>
+    </pattern>
+    
+    <!-- QR Code pattern -->
+    <pattern id="qrPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="white"/>
+      <rect width="8" height="8" fill="black"/>
+      <rect x="12" y="0" width="8" height="8" fill="black"/>
+      <rect x="0" y="12" width="8" height="8" fill="black"/>
+      <rect x="4" y="4" width="4" height="4" fill="white"/>
+      <rect x="16" y="4" width="4" height="4" fill="white"/>
+      <rect x="4" y="16" width="4" height="4" fill="white"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" fill="#1f2937" font-size="28" font-weight="bold">
+    QR Code Payment Scanning
+  </text>
+  <text x="400" y="75" text-anchor="middle" fill="#6b7280" font-size="16">
+    Seamless Mobile Payment Experience
+  </text>
+  
+  <!-- QR Code Display Stand/Terminal -->
+  <g transform="translate(150, 150)">
+    <rect width="200" height="250" rx="12" fill="white" filter="url(#dropShadow)"/>
+    <rect x="10" y="10" width="180" height="180" rx="8" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <!-- QR Code -->
+    <g transform="translate(30, 30)">
+      <!-- QR Code background -->
+      <rect width="140" height="140" fill="white" stroke="#d1d5db" stroke-width="1" rx="4"/>
+      
+      <!-- QR Code pattern -->
+      <g fill="url(#qrGrad)">
+        <!-- Corner markers -->
+        <rect x="10" y="10" width="30" height="30" rx="2"/>
+        <rect x="100" y="10" width="30" height="30" rx="2"/>
+        <rect x="10" y="100" width="30" height="30" rx="2"/>
+        
+        <!-- Inner corner squares -->
+        <rect x="16" y="16" width="18" height="18" fill="white"/>
+        <rect x="106" y="16" width="18" height="18" fill="white"/>
+        <rect x="16" y="106" width="18" height="18" fill="white"/>
+        <rect x="22" y="22" width="6" height="6"/>
+        <rect x="112" y="22" width="6" height="6"/>
+        <rect x="22" y="112" width="6" height="6"/>
+        
+        <!-- Data patterns -->
+        <rect x="50" y="20" width="6" height="6"/>
+        <rect x="60" y="20" width="6" height="6"/>
+        <rect x="80" y="20" width="6" height="6"/>
+        <rect x="20" y="50" width="6" height="6"/>
+        <rect x="30" y="50" width="6" height="6"/>
+        <rect x="50" y="50" width="6" height="6"/>
+        <rect x="70" y="50" width="6" height="6"/>
+        <rect x="90" y="50" width="6" height="6"/>
+        <rect x="110" y="50" width="6" height="6"/>
+        <rect x="130" y="50" width="6" height="6"/>
+        
+        <rect x="20" y="60" width="6" height="6"/>
+        <rect x="40" y="60" width="6" height="6"/>
+        <rect x="80" y="60" width="6" height="6"/>
+        <rect x="100" y="60" width="6" height="6"/>
+        <rect x="120" y="60" width="6" height="6"/>
+        
+        <rect x="50" y="70" width="6" height="6"/>
+        <rect x="70" y="70" width="6" height="6"/>
+        <rect x="90" y="70" width="6" height="6"/>
+        <rect x="110" y="70" width="6" height="6"/>
+        
+        <rect x="20" y="80" width="6" height="6"/>
+        <rect x="40" y="80" width="6" height="6"/>
+        <rect x="60" y="80" width="6" height="6"/>
+        <rect x="100" y="80" width="6" height="6"/>
+        <rect x="120" y="80" width="6" height="6"/>
+      </g>
+      
+      <!-- QR Code glow effect when scanned -->
+      <rect width="140" height="140" fill="none" stroke="url(#successGrad)" stroke-width="3" rx="4" opacity="0">
+        <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="3;6;3" dur="1s" begin="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Payment amount display -->
+    <rect x="20" y="200" width="160" height="30" rx="15" fill="#10b981" opacity="0.9"/>
+    <text x="100" y="220" text-anchor="middle" fill="white" font-size="16" font-weight="bold">
+      $24.67
+    </text>
+    
+    <!-- Status indicator -->
+    <circle cx="180" cy="20" r="8" fill="#fbbf24">
+      <animate attributeName="fill" values="#fbbf24;#10b981;#10b981;#fbbf24" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Mobile Phone -->
+  <g transform="translate(450, 120)">
+    <rect width="120" height="220" rx="20" fill="url(#phoneGrad)" filter="url(#dropShadow)"/>
+    <rect x="10" y="30" width="100" height="160" rx="8" fill="#000000"/>
+    
+    <!-- Phone screen content -->
+    <rect x="15" y="35" width="90" height="150" rx="6" fill="#1f2937"/>
+    
+    <!-- Camera viewfinder -->
+    <rect x="20" y="40" width="80" height="80" rx="4" fill="#374151" stroke="#4ade80" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Scanning overlay -->
+    <rect x="20" y="40" width="80" height="80" rx="4" fill="url(#scanGrad)" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0.3;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Scanning line -->
+    <rect x="20" y="50" width="80" height="2" fill="#10b981" opacity="0">
+      <animate attributeName="y" values="40;115;40" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Corner brackets for viewfinder -->
+    <g stroke="#10b981" stroke-width="3" fill="none" opacity="0">
+      <!-- Top-left -->
+      <path d="M 25 45 L 25 45 L 25 55 M 25 45 L 35 45"/>
+      <!-- Top-right -->
+      <path d="M 95 45 L 95 45 L 95 55 M 95 45 L 85 45"/>
+      <!-- Bottom-left -->
+      <path d="M 25 115 L 25 115 L 25 105 M 25 115 L 35 115"/>
+      <!-- Bottom-right -->
+      <path d="M 95 115 L 95 115 L 95 105 M 95 115 L 85 115"/>
+      
+      <animate attributeName="opacity" values="0;1;1;1;1;0.3" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- App interface elements -->
+    <text x="60" y="140" text-anchor="middle" fill="#9ca3af" font-size="12">
+      Align QR code within frame
+    </text>
+    
+    <!-- Scan button -->
+    <circle cx="60" cy="160" r="15" fill="url(#successGrad)" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="15;18;15" dur="0.5s" begin="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="60" y="165" text-anchor="middle" fill="white" font-size="10" font-weight="bold" opacity="0">
+      SCAN
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Success checkmark -->
+    <g transform="translate(60, 160)" opacity="0">
+      <circle r="20" fill="url(#successGrad)" opacity="0.2"/>
+      <path d="M-6,0 L-2,4 L6,-4" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="0;1.2;1" dur="0.5s" begin="3.5s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Home indicator -->
+    <rect x="50" y="200" width="20" height="4" rx="2" fill="#4b5563"/>
+  </g>
+  
+  <!-- Scanning beam effect -->
+  <g opacity="0">
+    <path d="M 100 280 Q 300 200 450 220" stroke="url(#scanGrad)" stroke-width="6" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" values="0 200;100 100;200 0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <animate attributeName="opacity" values="0;1;1;0;0;0" dur="6s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Data transmission particles -->
+  <g>
+    <circle cx="350" cy="240" r="3" fill="url(#successGrad)" opacity="0">
+      <animate attributeName="cx" values="280;450;450" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="260" r="2" fill="#34d399" opacity="0">
+      <animate attributeName="cx" values="260;430;430" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" cy="220" r="2.5" fill="#059669" opacity="0">
+      <animate attributeName="cx" values="300;470;470" dur="0.8s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Payment confirmation -->
+  <g transform="translate(600, 200)" opacity="0">
+    <rect width="160" height="120" rx="12" fill="white" filter="url(#dropShadow)"/>
+    <rect x="0" y="0" width="160" height="40" rx="12" fill="url(#successGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">
+      Payment Successful
+    </text>
+    
+    <text x="20" y="65" fill="#374151" font-size="12" font-weight="600">Amount: $24.67</text>
+    <text x="20" y="85" fill="#6b7280" font-size="11">Merchant: Coffee Shop</text>
+    <text x="20" y="100" fill="#6b7280" font-size="11">Time: 2:34 PM</text>
+    
+    <animate attributeName="opacity" values="0;0;0;0;1;1" dur="6s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="620,200; 600,200" dur="0.5s" begin="4s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Step indicators -->
+  <g transform="translate(400, 450)">
+    <text y="0" text-anchor="middle" fill="#1f2937" font-size="18" font-weight="600">
+      Scanning Process
+    </text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Step 1 -->
+      <circle cx="-60" cy="0" r="8" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#10b981;#10b981;#cbd5e1;#cbd5e1;#cbd5e1" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-60" y="20" text-anchor="middle" fill="#6b7280" font-size="10">Open Camera</text>
+      
+      <!-- Step 2 -->
+      <circle cx="-20" cy="0" r="8" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#10b981;#10b981;#cbd5e1;#cbd5e1" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-20" y="20" text-anchor="middle" fill="#6b7280" font-size="10">Scan QR</text>
+      
+      <!-- Step 3 -->
+      <circle cx="20" cy="0" r="8" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#10b981;#cbd5e1" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="20" text-anchor="middle" fill="#6b7280" font-size="10">Process</text>
+      
+      <!-- Step 4 -->
+      <circle cx="60" cy="0" r="8" fill="#cbd5e1">
+        <animate attributeName="fill" values="#cbd5e1;#cbd5e1;#cbd5e1;#cbd5e1;#10b981;#10b981" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="60" y="20" text-anchor="middle" fill="#6b7280" font-size="10">Confirm</text>
+      
+      <!-- Connection lines -->
+      <line x1="-52" y1="0" x2="-28" y2="0" stroke="#e5e7eb" stroke-width="2"/>
+      <line x1="-12" y1="0" x2="12" y2="0" stroke="#e5e7eb" stroke-width="2"/>
+      <line x1="28" y1="0" x2="52" y2="0" stroke="#e5e7eb" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Floating benefits -->
+  <g transform="translate(100, 520)" opacity="0.8">
+    <text x="0" y="0" fill="#10b981" font-size="14" font-weight="600">
+      ✓ Instant Recognition
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </text>
+    <text x="200" y="0" fill="#3b82f6" font-size="14" font-weight="600">
+      ✓ Secure Processing
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </text>
+    <text x="400" y="0" fill="#8b5cf6" font-size="14" font-weight="600">
+      ✓ Fast Confirmation
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+</svg>
