@@ -295,6 +295,14 @@ h2 {
   margin-bottom: 0;
 }
 /* Use cases grid */
+.case_anim {
+  margin: 0 auto;
+  padding: 0 auto;
+  max-width: 1024px;
+  min-width: 320px;
+  justify-items: auto;
+  height: auto;
+}
 .usecases-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   margin: 2.2em 0 1em 0;
