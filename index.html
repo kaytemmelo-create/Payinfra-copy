@@ -268,6 +268,29 @@
     <span>© 2025 PayInfra (Powered by Mercator). All rights reserved.</span>
   </div>
   </footer>
+  <!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top" 
+  style="display:none; position:fixed; bottom:30px; right:30px; background:#04ad75; border:none; border-radius:50%; width:40px; height:48px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.3); font-size:24px; color:#1a1a1a;">
+  &#8679; <!-- up arrow symbol -->
+</button>
+
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  // Show button when user scrolls down 100px
+  window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+
+  // Scroll smoothly to top when button clicked
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
   <script src="scripts.js"></script>
   </body>
   </html>
