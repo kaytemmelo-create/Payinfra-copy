@@ -38,7 +38,7 @@ body, html {
   box-sizing: border-box; /* Makes width/height calculations easier */
   font-size: 16px; /* Base font size */
   line-height: 1.6; /* Improves readability */
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family:'', ;
   background: var(--bg);
   color: var(--text-main);
   display: flex;
@@ -114,9 +114,9 @@ nav {
     background: #fff;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     flex-direction: column;
-    min-width: 180px;
+    min-width: 100px;
     z-index: 1000; /* higher z-index so it stays above content */
-    border-radius: 0 0 12px 12px;
+    border-radius: 12px 0 12px 12px;
   }
   .nav-list.active {
     display: flex;
@@ -214,12 +214,26 @@ border-color: var(--primary-dark);
 }
 /* Hero call to action buttons */
 .hero-cta-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  margin-top: 1.4em;
+  position: fixed;        /* Make it float over the content */
+  right: 5px;            /* 20px from the right edge */
+  z-index: 1000;          /* Stay on top of other content */
+  background-color: ; /* Blue background */
+  padding: 10px 15px;     /* Comfortably sized */
+  border-radius: 5px;     /* Rounded corners for smooth look */
+ 
 }
+
+.hero-cta-buttons a.cta {
+  color: white;           /* White button text */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-cta-buttons a.cta:hover {
+  text-decoration: none;
+}
+
+
 /* Hero button styles */
 section {
   max-width: 1120px;
