@@ -272,8 +272,8 @@ h2 {
 .pge {
   font-size: 1.15em;
   text-align: center;
-  font-weight: 700;
-  opacity: 0.90;
+  font-weight: 500;
+  opacity: 0.83;
 }
 /* Section content */
 .features-grid, .why-grid, .usecases-grid {
