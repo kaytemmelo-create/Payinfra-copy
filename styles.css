@@ -7,7 +7,7 @@
   --cta-dark: #129670;
   --header-bg: #fff;
   --text-main: #23395d;
-  --section-bg: #fff;
+  --section-bg: #faf7f7;
 }
 *, *:before, *:after {
   box-sizing: content-box;
@@ -217,10 +217,9 @@ border-color: var(--primary-dark);
   position: fixed;        /* Make it float over the content */
   right: 5px;            /* 20px from the right edge */
   z-index: 1000;          /* Stay on top of other content */
-  background-color: ; /* Blue background */
   padding: 10px 15px;     /* Comfortably sized */
-  border-radius: 5px;     /* Rounded corners for smooth look */
- 
+  border-radius: 5px; /* Rounded corners for smooth look */
+  display: flex;;
 }
 
 .hero-cta-buttons a.cta {
@@ -267,12 +266,16 @@ h2 {
   text-align: center;
   color: #456;
   margin-bottom: 2em;
-  font-size: 1.07em;
+  font-size: 1.0em;
   opacity: 0.83;
 }
+.pge {
+  font-size: 1.15em;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0.90;
+}
 /* Section content */
-
-
 .features-grid, .why-grid, .usecases-grid {
   display: grid;
   gap: 2.3em;
